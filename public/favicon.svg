@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#0B3D2E"/>
+
+  <!-- TV Screen outline -->
+  <rect x="4" y="6" width="24" height="16" rx="2" fill="none" stroke="white" stroke-width="2"/>
+
+  <!-- Center line -->
+  <line x1="16" y1="7" x2="16" y2="21" stroke="white" stroke-width="1.5"/>
+
+  <!-- Center circle -->
+  <circle cx="16" cy="14" r="4" fill="none" stroke="white" stroke-width="1.5"/>
+
+  <!-- TV Stand -->
+  <rect x="12" y="23" width="8" height="3" rx="1.5" fill="white"/>
+</svg>

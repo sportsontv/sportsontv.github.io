@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout
+  title="Sports TV Schedules"
+  description="Never miss a game. Find out what sports are on TV today with SportsOnTV."
+>
+  <Header slot="header" />
+
+  <Hero />
+
+  <section class="features">
+    <div class="container">
+      <h2>What's On TV</h2>
+      <p>
+        Browse live sports schedules across all major networks and streaming
+        services. From football to basketball, hockey to soccer, we've got you
+        covered.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Live Schedules</h3>
+          <p>See what games are on right now and upcoming.</p>
+        </div>
+        <div class="feature">
+          <h3>All Networks</h3>
+          <p>Coverage across cable, broadcast, and streaming.</p>
+        </div>
+        <div class="feature">
+          <h3>Your Sports</h3>
+          <p>Filter by the sports and teams you care about.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .features {
+    padding: 4rem 0;
+    background-color: var(--color-white);
+  }
+
+  .features h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .features > .container > p {
+    text-align: center;
+    color: var(--color-gray-700);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature {
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .feature h3 {
+    color: var(--color-gray-900);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .feature p {
+    color: var(--color-gray-500);
+    font-size: 0.95rem;
+  }
+</style>

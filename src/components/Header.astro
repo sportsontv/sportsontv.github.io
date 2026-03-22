@@ -1,0 +1,81 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/privacy', label: 'Privacy' },
+  { href: '/terms', label: 'Terms' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <div class="container">
+    <a href="/" class="logo">SportsOnTV</a>
+    <nav class="nav">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={['nav-link', { active: currentPath === link.href }]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    background-color: var(--color-primary);
+    padding: 1rem 0;
+  }
+
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: var(--color-white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .logo:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    color: var(--color-white);
+    opacity: 0.85;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    opacity: 1;
+    text-decoration: none;
+  }
+
+  @media (max-width: 640px) {
+    .nav {
+      gap: 1rem;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+    }
+  }
+</style>
