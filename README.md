@@ -1,43 +1,54 @@
-# Astro Starter Kit: Minimal
+# SportsOnTV Website
+
+Source code for [sportsontv.app](https://sportsontv.app) - the marketing and legal pages for the SportsOnTV mobile app.
+
+## Pages
+
+- `/` - Landing page
+- `/privacy` - Privacy Policy
+- `/terms` - Terms of Service
+
+## Local Development
+
+### Prerequisites
+
+- [mise](https://mise.jdx.dev/) (manages Node.js and pnpm versions)
+
+### Setup
 
 ```sh
-npm create astro@latest -- --template minimal
+# Install tools (Node.js, pnpm)
+mise install
+
+# Install dependencies
+pnpm install
+
+# Start dev server at localhost:4321
+pnpm dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Commands
 
-## 🚀 Project Structure
+| Command        | Action                                   |
+| :------------- | :--------------------------------------- |
+| `pnpm dev`     | Start local dev server at `localhost:4321` |
+| `pnpm build`   | Build production site to `./dist/`       |
+| `pnpm preview` | Preview production build locally         |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Deployment
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+The site is automatically deployed to GitHub Pages when changes are pushed to `main`. The GitHub Actions workflow handles building and deployment.
+
+## Project Structure
+
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+src/
+├── components/    # Reusable UI components (Header, Footer, Hero)
+├── layouts/       # Page layouts (BaseLayout, LegalLayout)
+├── pages/         # Routes (index, privacy, terms)
+└── styles/        # Global CSS
+public/
+├── CNAME          # Custom domain config
+├── favicon.svg    # Site favicon
+└── robots.txt
+```
